@@ -88,7 +88,7 @@ function show(){
     let sen=$.querySelectorAll(".sSEC");
     men.forEach(element => {
         if(element.textContent!=time.min){
-            element.style.fontSize="14px";
+            element.style.fontSize="11px";
             element.style.color="black";
         }
         else{
