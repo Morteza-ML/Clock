@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            position: relative;
+            height: 98vh;
+        }
+        .nomber p{
+            text-align: center;
+            width: 40px;
+            background-color: white;
+            font-size: 40px;
+            transform:
+                rotate(calc((var(--position) - 3)*-30deg - 15deg));
+        }
+        .nomber{
+            position: absolute;           
+            transform:
+                rotateZ(calc((var(--position) - 3)*30deg + 15deg))
+                translate(200px);
+                   
+        }
+        .watch{
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;           
+            top: calc(50%);
+            left: 50%;
+           
+        }
+        .sec{
+            font-size: 9px;
+            position: absolute;
+            top: calc(50% - 200px);
+            z-index: 2;
+            left: 50%;
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+            animation: s 60s reverse linear infinite;
+        }
+        .pSEC{
+            position: absolute;
+            transform:
+                rotateY(calc((var(--pSEC)*6deg)))
+                translateZ(230px);  
+        }
+        .posh1{
+            position: absolute;
+            top: calc(50% - 245px);
+            left: 50%;
+            transform: translate(-50%,-50%);
+            z-index: 1;
+            height: 100px;
+            width: 100%;
+            background-color: white;
+            
+        }
+        
+        .min{
+            font-size: 14px;
+            position: absolute;
+            top: calc(50% - 280px);
+            left: 50%;
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+            animation: s 3600s reverse linear infinite;
+        }
+        .pMIN{
+            position: absolute;
+            transform:
+                rotateY(calc((var(--pMIN)*6deg)))
+                translateZ(270px);  
+        }
+        
+        @keyframes s{
+            from{
+                transform:
+                    perspective(500px)
+                    rotateX(8deg)
+                    rotateY(0deg);
+            }
+            to{
+                transform:
+                    perspective(500px)
+                    rotateX(8deg)
+                    rotateY(360deg);
+            }
+        }
+        @media (max-width: 600px) {
+            
+            body{
+                height: 98vh;
+                margin: 0;
+            }
+            .nomber{
+                transform:
+                rotateZ(calc((var(--position) - 3)*30deg + 15deg))
+                translate(120px);
+            }
+            .pSEC{
+                transform:
+                rotateY(calc((var(--pSEC)*6deg)))
+                translateZ(110px);
+            }
+            .pMIN{
+                transform:
+                    rotateY(calc((var(--pMIN)*6deg)))
+                    translateZ(150px);
+            }
+            .posh1{
+                background-color: white;
+                height: 40px;
+                top: calc(50% - 180px);
+            }
+            .watch{
+                top: calc(50%);
+            }
+            .sec{
+                top: calc(50% - 140px);
+            }
+            .min{
+                top: calc(50% - 200px);
+            }
+            
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="posh1"></div>
+    
+    <div class="sec"></div>
+    <div class="min"></div>
+
+    <div class="watch">    
+        <div class="nomber" style="--position: 1"> <p>1</p></div>
+        <div class="nomber" style="--position: 2"> <p>2</p></div>
+        <div class="nomber" style="--position: 3"> <p>3</p></div>
+        <div class="nomber" style="--position: 4"> <p>4</p></div>
+        <div class="nomber" style="--position: 5"> <p>5</p></div>
+        <div class="nomber" style="--position: 6"> <p>6</p></div>
+        <div class="nomber" style="--position: 7"> <p>7</p></div>
+        <div class="nomber" style="--position: 8"> <p>8</p></div>
+        <div class="nomber" style="--position: 9"> <p>9</p></div>
+        <div class="nomber" style="--position: 10"><p>10</p></div>
+        <div class="nomber" style="--position: 11"><p>11</p></div>
+        <div class="nomber" style="--position: 12"><p>12</p></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
